@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         
-        {/* Weglot 翻譯功能 */}
+        {/* Weglot 翻譯小工具 */}
         <script src="https://cdn.weglot.com/weglot.min.js" defer></script>
         <script
           id="weglot-init"
@@ -33,9 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <ScrollReveal>
-          {children}
-        </ScrollReveal>
+        {/* 1. 把 children 直接放外面，讓頁面正常渲染 */}
+        {children}
+        
+        {/* 2. 恢復你們原本不帶 children 的 ScrollReveal 組件 */}
+        <ScrollReveal />
       </body>
     </html>
   )
